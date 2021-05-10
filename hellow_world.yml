@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+   - name: Hello World
+     command: uptime
+     register: uptime_status
+   - debug:
+       msg: "{{uptime_status.stdout_lines}}"
